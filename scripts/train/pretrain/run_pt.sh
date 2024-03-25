@@ -6,11 +6,11 @@ lora_trainable = "q_proj,v_proj,k_proj,o_proj,gate_proj,down_proj,up_proj"
 modules_to_save = "embed_tokens,lm_head"
 lora_dropout = 0.05
 
-pretrained_model = "/path/to/pretrained/model"
-tamil_tokenizer_path = "/path/to/tokenizer"
-dataset_dir = "/path/to/dataset"
-data_cache = "/path/to/cache_dir"
-output_dir = "/path/to/output_dir"
+pretrained_model = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+tamil_tokenizer_path = "/kaggle/input/bangla-tokenizer/merged_tokenizer_sp"
+dataset_dir = "/kaggle/input/bangla-mini-corpus/mini_corpus/bn"
+data_cache = "/kaggle/input/bangla-mini-corpus/mini_corpus/"
+output_dir = "/kaggle/working/output"
 deepspeed_config_file = "ds_zero2_no_offload.json"
 
 torchrun --nnodes 1 --nproc_per_node 1 run_clm_pt_with_peft.py \
